@@ -40,6 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth )
     {
         auth.authenticationProvider(daoAuthenticationProvider());
+
     }
 
     @Bean

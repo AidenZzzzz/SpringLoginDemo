@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author aiden
+ *
+ * Restration Rest Controller
  */
 @RestController
 @RequestMapping(path = "api/v1/registration")

@@ -15,7 +15,10 @@ import lombok.ToString;
 @ToString
 public class RegistrationRequest {
 
-    //request body looks like a json {"" : ""  ... }
+    /*
+     * request body
+     * looks like a json {"" : ""  ... }
+     */
 
     private final String firstName;
     private final String lastName;

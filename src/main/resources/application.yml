@@ -18,6 +18,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+      # this destroys the db everytime the app is run.
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
