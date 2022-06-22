@@ -17,8 +17,9 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
-      # this destroys the db everytime the app is run.
+       ddl-auto: update
+       #ddl-auto: create-drop
+       #this destroys the db everytime the app is run.
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect

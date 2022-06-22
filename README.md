@@ -4,7 +4,7 @@ The purpose of this project is to demonstrate my personal ability to construct s
 handling user registration, user detail validation and login function.
 
 ## Structure
-
+![img.png](img.png)
 ## Entity layer
 
 ## Controller layer
@@ -12,3 +12,7 @@ handling user registration, user detail validation and login function.
 ## Service Layer
 
 ## Validation and Security
+
+
+##Credit
+>https://github.com/amigoscode/login-registration-backend/

@@ -3,6 +3,8 @@ package com.example.springlogindemo.registration;
 import com.example.springlogindemo.appuser.AppUser;
 import com.example.springlogindemo.appuser.AppUserRole;
 import com.example.springlogindemo.appuser.AppUserServiceImpl;
+import com.example.springlogindemo.registration.token.ConfirmationToken;
+import com.example.springlogindemo.registration.token.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,7 @@ public class RegistrationService {
 
     private final AppUserServiceImpl appUserService;
     private final EmailValidator emailValidator;
+    private final ConfirmationTokenService confirmationTokenService;
 
     public String register(RegistrationRequest request) {
 
@@ -37,4 +40,9 @@ public class RegistrationService {
                 )
         );
     }
+
+//    public String confirmToken()
+//    {
+//        ConfirmationToken confirmationToken = confirmationTokenService.getToken()
+//    }
 }

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Restration Rest Controller
  */
 @RestController
-@RequestMapping(path = "api/v1/registration")
+@RequestMapping(path = "/user/registration")
 @AllArgsConstructor
 public class RegistrationController {
 

@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "2d71a8d8-ed8a-4f5a-acc7-7ea31c31c14f",
+		"name": "SpingLoginRegistrationRequest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17902147"
+	},
+	"item": [
+		{
+			"name": "registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"lafla\",\n    \"lastName\": \"awd\",\n    \"email\": \"dwda@fwd.com\",\n    \"password\": \"wWdfa\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registration confirmation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/registration/confirm?token=c32b3da1-8906-4e9a-bc1f-48f7801f9c45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registration",
+						"confirm"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "c32b3da1-8906-4e9a-bc1f-48f7801f9c45"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getItem",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/item/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"item",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postItem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"itemName\": \"newShirt\",\n    \"category\": \"shirt\",\n    \"price\": 9.99\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/admin/item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addItem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"itemName\": \"shirt\",\n    \"quantity\": 1,\n    \"price\":9.99\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"item"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

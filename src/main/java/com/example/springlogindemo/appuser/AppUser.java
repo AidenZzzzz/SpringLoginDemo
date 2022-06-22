@@ -1,6 +1,5 @@
 package com.example.springlogindemo.appuser;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,22 +16,13 @@ import java.util.Collections;
  */
 @Getter
 @Setter
-@EqualsAndHashCode
 @NoArgsConstructor
 @Entity
 public class AppUser implements UserDetails {
     //imp UserDetail because we need the security
 
-    @SequenceGenerator(
-            name = "app_user_sequence",
-            sequenceName = "app_user_sequence",
-            allocationSize = 1
-    )
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "app_user_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
@@ -41,6 +31,10 @@ public class AppUser implements UserDetails {
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
     private Boolean locked;
+
+    /**
+     * Enable once email confirmed
+     */
     private Boolean enable;
 
     public AppUser(String firstName,
@@ -55,7 +49,7 @@ public class AppUser implements UserDetails {
         this.password = password;
         this.appUserRole = appUserRole;
         this.locked = false;
-        this.enable = true;
+        this.enable = false;
     }
 
     @Override
