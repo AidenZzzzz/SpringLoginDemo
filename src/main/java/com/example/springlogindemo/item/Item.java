@@ -21,13 +21,13 @@ public class Item {
 
     private String itemName;
 
-    private Integer stock;
+    private Integer quantity;
 
     private Float price;
 
     public Item(String itemName, Integer stock, Float price) {
         this.itemName = itemName;
-        this.stock = stock;
+        this.quantity = stock;
         this.price = price;
     }
 }

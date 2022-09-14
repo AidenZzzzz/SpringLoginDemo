@@ -30,19 +30,21 @@ public class ItemService {
 
 
     public String addItem(AddItemRequest request) {
-
-        boolean itemExist = itemRepository.findByItemName(request.getItemName()).isPresent();
-
-        if(itemExist) {
-            return request.getItemName() + " already exist, use another name";
-        }
-
         Item item = new Item(
                 request.getItemName(),
                 request.getQuantity(),
                 request.getPrice()
         );
+
+        boolean itemExist = itemRepository.findByItemName(request.getItemName()).isPresent();
+
+        if(itemExist) {
+            itemRepository.updateItemByName(request.getItemName(),request.getPrice(),request.getQuantity());
+            return request.getItemName() + " already exist, updated with new price and new quantity";
+        }
+
         itemRepository.save(item);
-        return "Works " + item.toString();
+        return "Saved " + item.toString();
     }
+
 }

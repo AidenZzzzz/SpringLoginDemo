@@ -5,6 +5,7 @@
 
 #format for .yml
 server:
+  port : 3000
   error:
     include-binding-errors: always
     include-message: always

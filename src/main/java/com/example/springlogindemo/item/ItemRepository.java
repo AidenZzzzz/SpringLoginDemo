@@ -23,10 +23,17 @@ public interface ItemRepository extends JpaRepository<Item,Long>{
      */
     Optional<Item> findByItemName(String itemName);
 
-    // TODO: 6/22/22 insert item query
+    /**
+     * update item with the name itemName
+     * @param itemName name of the product
+     * @param price new price
+     * @param quantity new quantity
+     */
+    @Transactional
+    @Modifying
+    @Query("UPDATE Item i SET i.price = ?2 ,i.quantity = ?3 WHERE i.itemName = ?1"
+    )
+    void updateItemByName(String itemName, Float price, Integer quantity);
 
-//    @Transactional
-//    @Modifying
-//    int addItem(Item item);
 
 }
